@@ -1,0 +1,147 @@
+body {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .dashboard-header {
+    background-color: #212121;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .dashboard-title {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .sidebar h2 {
+    color: #e0e0e0;
+  }
+  
+  .sidebar nav {
+    margin-top: 2rem;
+  }
+  
+  .sidebar nav a {
+    display: block;
+    padding: 0.8rem;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .sidebar nav a:hover {
+    background-color: #333;
+  }
+  
+  .dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #2d2d2d;
+  }
+  
+  .dashboard-main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .summary-card {
+    background-color: #3b3b3b;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .summary-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .summary-card p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+  }
+  
+  .dashboard-chart {
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-chart h2 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .dashboard-lists {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .list-container {
+    background-color: #3b3b3b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .transaction-history {
+    margin-top: 30px;
+  }
+  
+  .transaction-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .transaction-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4b4b4b;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .transaction-item.receita {
+    border-left: 5px solid #4caf50;
+  }
+  
+  .transaction-item.despesa {
+    border-left: 5px solid #f44336;
+  }
+  
+  .transaction-description {
+    flex-grow: 1;
+  }
+  
+  .transaction-amount,
+  .transaction-date {
+    margin-left: 15px;
+  }
+  

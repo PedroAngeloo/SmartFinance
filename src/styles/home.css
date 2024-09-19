@@ -1,0 +1,70 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    color: #ffffff; /* Mudou para branco para combinar com fundo escuro */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.home-description {
+    font-size: 1.2rem;
+    color: #d1d1d1; /* Cinza claro para melhor contraste */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    background-color: #2c3e50; /* Fundo escuro como no Dashboard */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionado efeito na sombra */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+.feature-card h2 {
+    font-size: 1.5rem;
+    color: #ffffff; /* Título em branco */
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #d1d1d1; /* Texto em cinza claro */
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    background-color: #3498db; /* Azul semelhante ao do gráfico */
+    color: #ffffff; /* Texto em branco */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionando efeito de transformação */
+}
+
+.cta-button:hover {
+    background-color: #2980b9; /* Azul mais escuro */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}

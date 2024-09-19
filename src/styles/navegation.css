@@ -1,0 +1,35 @@
+.nav-container {
+    background-color: #2c3e50;
+    padding: 15px 0;
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin: 0 10px;
+  }
+  
+  .nav-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background-color: #34495e;
+  }
+  
+  .nav-link.active {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
