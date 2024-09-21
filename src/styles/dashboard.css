@@ -1,147 +1,183 @@
-body {
-    background-color: #2d2d2d;
-    color: #e0e0e0;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .dashboard-container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .dashboard-header {
-    background-color: #212121;
-    padding: 1rem;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .dashboard-title {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  .sidebar {
-    width: 250px;
-    background-color: #1a1a1a;
-    padding: 20px;
-    height: 100vh;
-  }
-  
-  .sidebar h2 {
-    color: #e0e0e0;
-  }
-  
-  .sidebar nav {
-    margin-top: 2rem;
-  }
-  
-  .sidebar nav a {
-    display: block;
-    padding: 0.8rem;
-    color: #e0e0e0;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-  
-  .sidebar nav a:hover {
-    background-color: #333;
-  }
-  
-  .dashboard-content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #2d2d2d;
-  }
-  
-  .dashboard-main {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .dashboard-summary {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-  
-  .summary-card {
-    background-color: #3b3b3b;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    flex: 1;
-    margin: 0 10px;
-  }
-  
-  .summary-card h3 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  
-  .summary-card p {
-    margin: 10px 0 0;
-    font-size: 1.2rem;
-  }
-  
-  .dashboard-chart {
-    margin-bottom: 30px;
-  }
-  
-  .dashboard-chart h2 {
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  .dashboard-lists {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .list-container {
-    background-color: #3b3b3b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 48%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .transaction-history {
-    margin-top: 30px;
-  }
-  
-  .transaction-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .transaction-item {
-    display: flex;
-    justify-content: space-between;
-    background-color: #4b4b4b;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .transaction-item.receita {
-    border-left: 5px solid #4caf50;
-  }
-  
-  .transaction-item.despesa {
-    border-left: 5px solid #f44336;
-  }
-  
-  .transaction-description {
-    flex-grow: 1;
-  }
-  
-  .transaction-amount,
-  .transaction-date {
-    margin-left: 15px;
-  }
-  
+.dashboard-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background-color: #2c3e50;
+  color: white;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-title {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.theme-toggle-button {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: #2980b9;
+}
+
+.dashboard-main {
+  margin-top: 20px;
+}
+
+.dashboard-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.summary-card {
+  flex: 1;
+  padding: 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.summary-card.income {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.summary-card.expenses {
+  background-color: #F44336;
+  color: white;
+}
+
+.summary-card.balance {
+  background-color: #3498db;
+  color: white;
+}
+
+.dashboard-chart {
+  margin-bottom: 40px;
+}
+
+.dashboard-lists {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.list-container {
+  flex: 1;
+}
+
+.transaction-history {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #2c3e50; /* Fundo levemente cinza para contraste */
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid black; /* Borda preta */
+  border-radius: 5px; /* Bordas arredondadas */
+  margin-bottom: 10px; /* Espaçamento entre os itens */
+  background-color: white; /* Fundo branco para os itens */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+.transaction-item:hover {
+  background-color: #e0e0e0; /* Efeito de destaque ao passar o mouse */
+}
+
+.transaction-description {
+  flex: 2;
+  color: #333; /* Cor do texto */
+}
+
+.transaction-amount {
+  flex: 1;
+  text-align: right;
+  color: #4CAF50; /* Verde para valores de receita */
+}
+
+.transaction-date {
+  flex: 1;
+  text-align: right;
+  color: #F44336; /* Vermelho para valores de despesa */
+}
+
+body.dark-mode {
+  background-color: #1a1a1a; /* Fundo escuro */
+  color: #ffffff; /* Cor do texto */
+}
+
+body.dark-mode .sidebar {
+  background-color: #2c3e50; /* Cor da sidebar no modo escuro */
+}
+
+body.dark-mode .dashboard-container {
+  background-color: #333; /* Cor do contêiner principal no modo escuro */
+}
+
+body.dark-mode .transaction-history {
+  background-color: #444; /* Fundo da seção de histórico no modo escuro */
+}
+
+body.dark-mode .summary-card.income {
+  background-color: #2ecc71; /* Verde mais escuro para receitas */
+}
+
+body.dark-mode .summary-card.expenses {
+  background-color: #e74c3c; /* Vermelho mais escuro para despesas */
+}
+
+body.dark-mode .summary-card.balance {
+  background-color: #2980b9; /* Azul mais escuro para saldo */
+}
+
+body.dark-mode .transaction-item {
+  background-color: #555; /* Fundo dos itens no modo escuro */
+  border: 1px solid #777; /* Borda mais clara */
+}
+
+body.dark-mode .transaction-description,
+body.dark-mode .transaction-amount,
+body.dark-mode .transaction-date {
+  color: #fff; /* Cor do texto no modo escuro */
+}

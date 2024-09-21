@@ -5,7 +5,7 @@ import "../styles/home.css";
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      <h1 className="home-title">Bem-vindo ao Expense Tracker</h1>
+      <h1 className="home-title">Bem-vindo ao SmartFinance</h1>
       <div className="home-content">
         <p className="home-description">
           Gerencie suas finanças de forma simples e eficiente com nosso

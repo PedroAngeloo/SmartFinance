@@ -10,6 +10,12 @@ const Dashboard: React.FC = () => {
   const { receitas, despesas } = useApp();
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
   const [transactionHistory, setTransactionHistory] = useState<Transacao[]>([]);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  };
 
   const totalReceitas = receitas.reduce((total, receita) => total + receita.valor, 0);
   const totalDespesas = despesas.reduce((total, despesa) => total + despesa.valor, 0);
@@ -37,15 +43,15 @@ const Dashboard: React.FC = () => {
 
   const monthlyData = useMemo(() => {
     const data: { [key: string]: { month: string; receitas: number; despesas: number } } = {};
-    
+
     [...receitas, ...despesas].forEach(transaction => {
       const date = new Date(transaction.data);
       const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
-      
+
       if (!data[monthYear]) {
         data[monthYear] = { month: monthYear, receitas: 0, despesas: 0 };
       }
-      
+
       if (transaction.tipo === 'receita') {
         data[monthYear].receitas += transaction.valor;
       } else {
@@ -139,7 +145,10 @@ const Dashboard: React.FC = () => {
       </aside>
       <div className="dashboard-content">
         <header className="dashboard-header">
-        <h1 className="dashboard-title">Dashboard Financeiro</h1>
+          <h1 className="dashboard-title">Dashboard Financeiro</h1>
+          <button className="theme-toggle-button" onClick={toggleTheme}>
+            {darkMode ? "Modo Claro" : "Modo Escuro"}
+          </button>
         </header>
         <div className="dashboard-main">
           <div className="dashboard-summary">
