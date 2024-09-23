@@ -7,15 +7,23 @@ import '../styles/dashboard.css';
 import { Transacao } from '../types';
 
 const Dashboard: React.FC = () => {
+
+  const linkStyle = {
+    textDecoration: 'underline',
+    color: 'blue',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+  };
+
+  const handleNavigation = (path: string) => {
+    window.location.href = path;
+  };
+
   const { receitas, despesas } = useApp();
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
   const [transactionHistory, setTransactionHistory] = useState<Transacao[]>([]);
   const [darkMode, setDarkMode] = useState<boolean>(false);
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode', !darkMode);
-  };
 
   const totalReceitas = receitas.reduce((total, receita) => total + receita.valor, 0);
   const totalDespesas = despesas.reduce((total, despesa) => total + despesa.valor, 0);
@@ -133,14 +141,23 @@ const Dashboard: React.FC = () => {
     );
   };
 
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+    if (darkMode) {
+      document.body.classList.remove('dark-mode');
+    } else {
+      document.body.classList.add('dark-mode');
+    }
+  };
+
   return (
-    <div className="dashboard-container">
+    <div className={`dashboard-container ${darkMode ? 'dark' : ''}`}>
       <aside className="sidebar">
         <h2>Menu</h2>
         <nav>
-          <a href="#">Dashboard</a>
-          <a href="#">Transações</a>
-          <a href="#">Relatórios</a>
+          <button onClick={() => handleNavigation('/dashboard')} style={linkStyle}>Dashboard</button>
+          <button onClick={() => handleNavigation('/transacoes')} style={linkStyle}>Transações</button>
+          <button onClick={() => handleNavigation('/relatorios')} style={linkStyle}>Relatórios</button>
         </nav>
       </aside>
       <div className="dashboard-content">
@@ -235,6 +252,7 @@ const Dashboard: React.FC = () => {
       </div>
     </div>
   );
-}
+};
+
 
 export default Dashboard;
