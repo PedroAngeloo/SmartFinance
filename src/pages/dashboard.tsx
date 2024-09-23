@@ -6,20 +6,23 @@ import Despesas from '../components/despesas';
 import '../styles/dashboard.css';
 import { Transacao } from '../types';
 
+// Define funções e variáveis aqui, se necessário
+
+const linkStyle = {
+  textDecoration: 'underline',
+  color: 'blue',
+  background: 'none',
+  border: 'none',
+  cursor: 'pointer',
+};
+
+const handleNavigation = (path: string) => {
+  window.location.href = path;
+};
+
+// Funções e variáveis adicionais aqui
+
 const Dashboard: React.FC = () => {
-
-  const linkStyle = {
-    textDecoration: 'underline',
-    color: 'blue',
-    background: 'none',
-    border: 'none',
-    cursor: 'pointer',
-  };
-
-  const handleNavigation = (path: string) => {
-    window.location.href = path;
-  };
-
   const { receitas, despesas } = useApp();
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
   const [transactionHistory, setTransactionHistory] = useState<Transacao[]>([]);
@@ -153,7 +156,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className={`dashboard-container ${darkMode ? 'dark' : ''}`}>
       <aside className="sidebar">
-        <h2>Menu</h2>
+        <h2>Menu/Não está funcionando ainda</h2>
         <nav>
           <button onClick={() => handleNavigation('/dashboard')} style={linkStyle}>Dashboard</button>
           <button onClick={() => handleNavigation('/transacoes')} style={linkStyle}>Transações</button>
@@ -167,6 +170,14 @@ const Dashboard: React.FC = () => {
             {darkMode ? "Modo Claro" : "Modo Escuro"}
           </button>
         </header>
+        <div className="dashboard-lists">
+          <div className="list-container">
+            <Receitas />
+          </div>
+          <div className="list-container">
+            <Despesas />
+          </div>
+        </div>
         <div className="dashboard-main">
           <div className="dashboard-summary">
             <div className="summary-card income">
@@ -219,14 +230,6 @@ const Dashboard: React.FC = () => {
               </BarChart>
             </ResponsiveContainer>
           </div>
-          <div className="dashboard-lists">
-            <div className="list-container">
-              <Receitas />
-            </div>
-            <div className="list-container">
-              <Despesas />
-            </div>
-          </div>
           <div className="transaction-history">
             <h2>Histórico de Transações</h2>
             <ul className="transaction-list">
@@ -253,6 +256,5 @@ const Dashboard: React.FC = () => {
     </div>
   );
 };
-
 
 export default Dashboard;
